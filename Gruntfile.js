@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         },
         copy: {
             main: {
-                src: ['*.html', 'mail/**', 'img/**', 'less/**', 'favicon*', 'robots.txt', 'sitemap.xml'],
+                src: ['*.html', 'mail/**', 'img/**', 'less/**', 'favicon*', 'robots.txt', 'sitemap.xml', '.htaccess'],
                 dest: 'dist/',
             },
             jquery: {
