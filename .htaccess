@@ -1,0 +1,19 @@
+RewriteEngine   on
+
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+<IfModule mod_headers.c>
+	<FilesMatch "\\.(eot|ttf|woff2?)$">
+		Header set Cache-Control "max-age=172800, public"
+	</FilesMatch>
+	<FilesMatch "\\.min\\.(css|js)$">
+		Header set Cache-Control "max-age=172800, public"
+	</FilesMatch>
+	<FilesMatch "jquery\\.js$">
+		Header set Cache-Control "max-age=172800, public"
+	</FilesMatch>
+	<FilesMatch "\\.(x?html?|php)$">
+		Header set Cache-Control "max-age=600, private, must-revalidate"
+	</FilesMatch>
+</IfModule>
