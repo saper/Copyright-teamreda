@@ -30,14 +30,13 @@ $(function() {
 	    event.stopPropagation();
 	});
 	// Ajout Mistral : Patch les modals pour qu'elles affichent bien le href # dans l'url
-    $('#Reforme').on('click', '.portfolio-link', function(event){
+    $('body').on('click', '.portfolio-link', function(event){
     	$($(this).attr('href')).modal('show');
 	    event.stopPropagation();
 	});
 	// Ajout Mistral : Test si l'url contient un href qui correspond à une modal : auquel cas, l'affiche
 	var hreftag = $(location).attr('href').replace(/^(.*)#(.*)/i, '$2');
     $('.portfolio-modal[id="'+hreftag+'"]').modal('show');
-	$('#Reforme .portfolio-link[href="#Reforme-DRM"]');
 });
 
 // Highlight the top nav as scrolling occurs
